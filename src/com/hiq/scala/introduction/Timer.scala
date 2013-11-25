@@ -9,12 +9,10 @@ object Timer {
     }
   }
 
-  def timeFlies() {
-    println("Time flies when you're having fun")
-  }
-
   def main(args: Array[String]) {
-    oncePerSecond(timeFlies)
-  }
+    oncePerSecond(() =>
+      println("Time flies when you're having fun")
+    )
+ }
 
 }
