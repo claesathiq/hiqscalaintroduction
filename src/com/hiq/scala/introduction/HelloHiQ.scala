@@ -1,11 +1,30 @@
 package com.hiq.scala.introduction
 
 /**
- * Singleton instead of static
- * Note that this creates an instance of an anonymous class
+ * Companion objects
+ * Often used for factory methods for class, fr instance to create case classes
  */
-object HelloHiQ {
+abstract class AbstractClass
+
+class StringClass(s: String) extends AbstractClass {
+  override def toString = "Hello " + s
+}
+
+class IntClass(i: Int) extends AbstractClass {
+  override def toString = "Hello " + i
+}
+object AbstractClass {
+  def apply(s: String) = {
+    new StringClass(s)
+  }
+  def apply(i: Int) = {
+    new IntClass(i)
+  }
+}
+
+object Run {
   def main(args: Array[String]) {
-    println("Hello HiQ!")
+    println(AbstractClass("HiQ"))
+    println(AbstractClass(5))
   }
 }
