@@ -25,5 +25,5 @@ object Implicits extends App {
     def pretty = println("Pretty " + x)
   }
 
-  5 pretty
+  5 pretty         // Would be illegal without implicit conversion to IntWithPretty
 }
